@@ -1,7 +1,7 @@
 let search=[];
 let text="";
 let data;
-$.getJSON("http://www.omdbapi.com/?s=harry+potter&apikey=e0620bd4",function(data){
+$.getJSON("https://www.omdbapi.com/?s=harry+potter&apikey=e0620bd4",function(data){
     console.log(data);
     search = [...data.Search];
     for(let i=0;i<search.length;i++){
