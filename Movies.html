@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<link rel="stylesheet" href="Moviescss.css">    
+</head>
+<body>
+    <div class="header">
+        <center><h1>Movies List</h1></center>
+    </div>
+    <br><br><br><br><br>
+    <div >
+        <center><ul id="list"></ul></center>
+    </div>
+
+    <div id="add">
+        <center><h2>Add new Movie to List</h2></center>
+        <form id="app">
+            <label for="">Movie Name</label><br>
+            <input v-model="message" required maxlength="20" placeholder="Movie title"><br>
+            <label for="">Link of Image</label><br>
+            <input v-model="link" required @change="GetImage" placeholder="Link of image"><br>
+            <label for="">Year </label><br>
+            <input v-model="Year" required maxlength="4" placeholder="Year of release"><br>
+            <label for="">Imdb ID</label><br>
+            <input v-model="imdb" required maxlength="4" placeholder="Imdb Id"><br>
+            <label for="">Type of Content</label><br>
+            <input v-model="type" required maxlength="10" placeholder="Type of content"><br>
+            <input type="button" value="Upload" onclick="upload()">
+        </form>
+        <div id="preview">
+            <p>Title :   {{message}}</p>
+            <p>Link  :   {{link}}</p>
+            <p>Year  :   {{Year}}</p>
+            <p>Imdb  :   {{imdb}}</p>
+            <p>Type  :   {{type}}</p>
+            <img id="demo" :src="source" alt="">
+        </div>
+    </div>
+    <br><br><br>
+</body>     
+</html>
+<script src="Moviesscript.js"></script>
