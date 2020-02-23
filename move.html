@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>API Movie</title>   
+    <link rel="stylesheet" href="movies_css.css">
+</head>
+
+<body>
+<div id="ele">
+  <center>
+    <ul id="list">
+      <movie-list v-for="sms in msg" v-bind:title="sms.Title" v-bind:image="sms.Poster" v-bind:id="sms.imdbID"v-bind:year="sms.Year" v-bind:Type="sms.Type"></movie-list>
+    </ul>
+  </center>
+
+  <div id="add">
+    <center><h2>Add new Movie to List</h2></center>
+    <form id="app">
+      <input v-model="name" placeholder="Enter the title" ><br>
+      <input v-model="poster" placeholder="Enter the title"><br>
+      <input v-model="yr" placeholder="Enter the title"><br>
+      <input v-model="imdbID" placeholder="Enter the title"><br>
+      <input v-model="Type" placeholder="Enter the title"><br>
+      <button type="button" @click="add">Add</button>
+    </form>
+    <div id="preview">
+      <p>Title :   {{name}}</p>
+      <p>Link  :   {{poster}}</p>
+      <p>Year  :   {{yr}}</p>
+      <p>Imdb  :   {{imdbID}}</p>
+      <p>Type  :   {{Type}}</p>
+      <img id="demo" :src="poster" alt="">
+    </div>
+  </div>
+</div> 
+</body>
+</html>
+<script src="https://unpkg.com/vue"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>
+<script src="movies_list.js"></script> 
+
